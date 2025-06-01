@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Invalid credentials";
     }
 }
+
 ?>
 <form method="POST">
     <h2>User Login</h2>
