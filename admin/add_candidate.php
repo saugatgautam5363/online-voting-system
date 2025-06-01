@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->query("INSERT INTO candidates (name) VALUES ('$name')");
     echo "Candidate added.";
 }
+
 ?>
 <form method="POST">
     <h2>Add Candidate</h2>
