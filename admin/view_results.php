@@ -8,3 +8,4 @@ $results = $conn->query("SELECT * FROM candidates ORDER BY votes DESC");
             <li><?= $row['name'] ?> - <?= $row['votes'] ?> votes</li>
     <?php endwhile; ?>
 </ul>
+
