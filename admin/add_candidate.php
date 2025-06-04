@@ -1,14 +1,20 @@
 <?php
-include('../db/config.php');
+include '../db/config.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
-    $conn->query("INSERT INTO candidates (name) VALUES ('$name')");
-    echo "Candidate added.";
-}
+    $party = $_POST['party'];
 
+    $stmt = $conn->prepare("INSERT INTO candidates (name, party) VALUES (?, ?)");
+    $stmt->bind_param("ss", $name, $party);
+    $stmt->execute();
+
+    echo "Candidate added!";
+}
 ?>
-<form method="POST">
-    <h2>Add Candidate</h2>
-    <input name="name" placeholder="Candidate Name" required><br>
-    <button type="submit">Add</button>
+
+<form method="post">
+    Name: <input type="text" name="name" /><br>
+    Party: <input type="text" name="party" /><br>
+    <button type="submit">Add Candidate</button>
 </form>
