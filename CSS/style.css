@@ -1,35 +1,62 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f7f7f7;
-    color: #333;
-    padding: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-form {
-    background: #fff;
-    padding: 2em;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-input, button {
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
 }
-button {
-    background: #0066cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background: #004999;
-}
+
 h2 {
     text-align: center;
-    color: #0066cc;
+    color: #333;
 }
-a {
-    color: #0066cc;
+
+input[type="text"],
+input[type="password"],
+button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
